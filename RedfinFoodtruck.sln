@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedfinFoodtruck", "RedfinFoodtruck\RedfinFoodtruck.csproj", "{62DBAA04-DA6A-4C40-AEF8-C3CFE5B706DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedfinFoodtruck.Services", "RedfinFoodtruck.Services\RedfinFoodtruck.Services.csproj", "{E0B2F394-3B95-4C8D-8802-6FE3A85E1643}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{62DBAA04-DA6A-4C40-AEF8-C3CFE5B706DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62DBAA04-DA6A-4C40-AEF8-C3CFE5B706DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62DBAA04-DA6A-4C40-AEF8-C3CFE5B706DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B2F394-3B95-4C8D-8802-6FE3A85E1643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B2F394-3B95-4C8D-8802-6FE3A85E1643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B2F394-3B95-4C8D-8802-6FE3A85E1643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B2F394-3B95-4C8D-8802-6FE3A85E1643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
