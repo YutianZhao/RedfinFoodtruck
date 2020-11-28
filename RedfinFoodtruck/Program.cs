@@ -5,6 +5,7 @@ using RedfinFoodtruck.Services.Models;
 using RedfinFoodtruck.Services.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,7 +21,8 @@ namespace RedfinFoodtruck
         }
         static async Task Main(string[] args)
         {
-            var nowOpen = await GetCurrentOpenStores.GetCurrentOpenMobileFoods();
+            var nowOpenTask = await GetCurrentOpenStores.GetCurrentOpenMobileFoods();
+            var nowOpen = nowOpenTask.OrderBy(x => x.Applicant).ToList();
             //foreach(var food in nowOpen)
             //{
             //    Console.WriteLine(food.Applicant + " ------ " + food.Starttime + " - " + food.Endtime + " ------ " + food.Location);
