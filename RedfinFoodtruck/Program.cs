@@ -21,8 +21,8 @@ namespace RedfinFoodtruck
         }
         static async Task Main(string[] args)
         {
-            var nowOpenTask = await GetCurrentOpenStores.GetCurrentOpenMobileFoods();
-            var nowOpen = nowOpenTask.OrderBy(x => x.Applicant).ToList();
+            var nowOpen = await GetCurrentOpenStores.GetCurrentOpenMobileFoods();
+            nowOpen.Sort((x, y) => string.Compare(x.Applicant, y.Applicant));
             //foreach(var food in nowOpen)
             //{
             //    Console.WriteLine(food.Applicant + " ------ " + food.Starttime + " - " + food.Endtime + " ------ " + food.Location);
