@@ -54,5 +54,25 @@ namespace RedfinFoodtruck.Services
                 && (DateTime.ParseExact(x.End24, "HH:mm", CultureInfo.InvariantCulture) >= timeNow || x.End24 == "00:00")).ToList();
             return nowOpen;
         }
+
+        public static async Task<string> PostCountryAndDate(CountryAndDateDTO countryAndDateDTO)
+        {
+            try
+            {
+                // For DI:
+                // return await _mobileFoodScheduleHttpClientService.GetMobileFoodSchedule();
+
+                // For Console:
+                var serviceBase = new HttpClientServiceBase(new HttpClient());
+                var service = new MobileFoodScheduleHttpClientService(serviceBase);
+                return await service.PostCountryAndDate(countryAndDateDTO);
+            }
+            catch (Exception ex)
+            {
+                // We can log error here
+                Console.WriteLine("Error while getting mobile food schedule" + ex.Message + ex.StackTrace);
+                return "";
+            }
+        }
     }
 }

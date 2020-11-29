@@ -15,10 +15,12 @@ namespace RedfinFoodtruck.Services.Services
     {
         private readonly IHttpClientServiceBase _serviceBase;
         private string GetMobileFoodScheduleUrl;
+        private string PostCountryAndDateUrl;
 
         public MobileFoodScheduleHttpClientService(IHttpClientServiceBase serviceBase)
         {
             GetMobileFoodScheduleUrl = "https://data.sfgov.org/resource/jjew-r69b.json";
+            PostCountryAndDateUrl = "https://someurl.here";
             _serviceBase = serviceBase;
         }
 
@@ -42,6 +44,13 @@ namespace RedfinFoodtruck.Services.Services
         {
             var response = await MakeRequest(GetMobileFoodScheduleUrl, HttpMethod.Get);
             return JsonConvert.DeserializeObject<List<MobileFoodScheduleDTO>>(response, JsonExtension.Settings());
+        }
+
+        public async Task<string> PostCountryAndDate(CountryAndDateDTO countryAndDateDTO)
+        {
+            var response = await MakeRequest(PostCountryAndDateUrl, HttpMethod.Post, countryAndDateDTO);
+            // return JsonConvert.DeserializeObject<string>(response, JsonExtension.Settings());
+            return response;
         }
     }
 }
